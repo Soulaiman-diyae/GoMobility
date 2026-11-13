@@ -303,8 +303,17 @@ $("#heroSearch").addEventListener("submit", e => {
 
 /* ---- menu mobile & en-tête ---- */
 const burger = $("#burger"), nav = $("#nav");
-function closeNav() { nav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }
-burger.onclick = () => burger.setAttribute("aria-expanded", String(nav.classList.toggle("open")));
+function setNav(open) {
+  nav.classList.toggle("open", open);
+  document.body.classList.toggle("nav-open", open);
+  burger.setAttribute("aria-expanded", String(open));
+}
+function closeNav() { setNav(false); }
+burger.onclick = e => { e.stopPropagation(); setNav(!nav.classList.contains("open")); };
+/* toucher en dehors du menu ou appuyer sur Échap le ferme */
+document.addEventListener("click", e => { if (nav.classList.contains("open") && !e.target.closest("#nav, #burger")) closeNav(); }, true);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && nav.classList.contains("open")) { closeNav(); burger.focus(); } });
+addEventListener("resize", () => { if (innerWidth > 1100 && nav.classList.contains("open")) closeNav(); });
 const onScroll = () => $("#top").classList.toggle("solid", scrollY > 24);
 addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
