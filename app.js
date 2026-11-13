@@ -192,7 +192,7 @@ function formHTML(subject) {
     <input type="hidden" name="subject" value="${esc(subject)}">
     <label>${esc(t("fName"))}<input name="name" required autocomplete="name"></label>
     <label>${esc(t("fPhone"))}<input name="phone" type="tel" dir="ltr" required autocomplete="tel" placeholder="+212 ..."></label>
-    <div class="two">
+    <div class="two stack">
       <label>${esc(t("fCity"))}<select name="city">${CITIES.map(cityOpt).join("")}</select></label>
       <label>${esc(t("fAgency"))}<select name="agency">${AGENCIES.map(a => `<option value="${a.id}">${esc(tv(a.city))}</option>`).join("")}</select></label>
     </div>
@@ -211,7 +211,7 @@ function openCar(id) {
   const row = (k, v) => `<div><span>${esc(t(k))}</span><b>${esc(v)}</b></div>`;
   body.innerHTML = `<div class="m-info">
       <div class="card-img">${visual(c)}${badges(c)}</div>
-      <span class="card-brand">${esc(c.brand)}</span>
+      <span class="card-brand">${esc(tv(c.cat))} · ${esc(tv(c.gear))}</span>
       <h3 id="mTitle"><bdi>${esc(name(c))}</bdi></h3>
       <div class="m-quote">${waBtn(c)}</div>
       <div class="m-list">
