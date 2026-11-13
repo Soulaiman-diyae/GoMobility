@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0c">
+<title>Location de voiture à Oujda et Rabat | GoMobility</title>
+<meta name="description" content="GoMobility : location de voitures à Oujda et à Rabat. Modèles 2026, livraison gratuite à Oujda et Rabat, livraison dans 11 villes du Maroc, devis sur WhatsApp.">
+<style>[hidden]{display:none!important}body{margin:0;background:#0b0b0c}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8'/%3E%3Cpath d='M5 30 L10 14 L17 23 L20 9 L23 23 L30 14 L35 30 Z' fill='none' stroke='%23cca158' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <!-- LOGO : remplacez ce bloc par votre image, ex. <img src="photos/logo.png" alt="GoMobility"> -->
+    <a class="logo" href="#accueil" aria-label="GoMobility">
+      <svg viewBox="0 0 40 28" aria-hidden="true"><path d="M3 24 L8 8 L15 17 L20 3 L25 17 L32 8 L37 24 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 27h34" stroke="currentColor" stroke-width="2"/></svg>
+      <span><b>GOMOBILITY</b><i data-i18n="logoSub">Location de voitures</i></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#accueil" data-i18n="nav1">Accueil</a>
+      <a href="#flotte" data-i18n="nav2">Nos voitures</a>
+      <a href="#agences" data-i18n="nav3">Agences</a>
+      <a href="#services" data-i18n="nav4">Services</a>
+      <a href="#destinations" data-i18n="nav5">Destinations</a>
+      <a href="#faq" data-i18n="nav6">FAQ</a>
+      <div class="lang" data-lang-switch role="group" aria-label="Langue"></div>
+    </nav>
+    <div class="top-act">
+      <div class="lang" data-lang-switch role="group" aria-label="Langue"></div>
+      <button type="button" class="btn btn-ghost tel" data-call data-i18n="call">Appeler</button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" data-i18n-aria="aMenu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+  <div class="wrap hero-in">
+    <p class="pill"><span class="dot"></span><span id="heroCount"></span></p>
+    <h1 class="gold-text" data-i18n="h1">Location de voiture<br>à Oujda et à Rabat</h1>
+    <p class="lead" data-i18n="lead">Des modèles 2026 impeccablement entretenus. Livraison gratuite à Oujda et à Rabat, et livraison dans 9 autres villes du Maroc sur devis. Réponse rapide par téléphone ou WhatsApp.</p>
+    <ul class="hero-points">
+      <li data-i18n="p1">Devis gratuit sur WhatsApp</li>
+      <li data-i18n="p2">Livraison gratuite à Oujda et Rabat</li>
+      <li data-i18n="p3">Modèles 2026</li>
+    </ul>
+    <form class="search" id="heroSearch" role="search">
+      <label class="sr" for="q" data-i18n="qLabel">Rechercher une voiture</label>
+      <input id="q" type="search" placeholder="Ex. : Clio automatique, diesel" data-i18n-ph="qPh" autocomplete="off">
+      <button class="btn btn-gold" type="submit" data-i18n="searchBtn">Rechercher</button>
+    </form>
+    <a class="link-arrow" href="#flotte" data-i18n="discover">Découvrir nos voitures</a>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div><b data-i18n="s1b">2 agences</b><span data-i18n="s1s">Oujda et Rabat</span></div>
+    <div><b data-i18n="s2b">11 villes</b><span data-i18n="s2s">Votre véhicule livré à destination</span></div>
+    <div><b data-i18n="s3b">2026</b><span data-i18n="s3s">Modèles récents et entretenus</span></div>
+    <div><b data-i18n="s4b">Livraison offerte</b><span data-i18n="s4s">À Oujda et à Rabat</span></div>
+  </div>
+</section>
+
+<section class="sec" id="flotte">
+  <div class="wrap">
+    <h2 class="eyebrow" data-i18n="fleetEy">Nos voitures</h2>
+    <p class="title" data-i18n="fleetT">Découvrez notre flotte</p>
+    <p class="sub" data-i18n="fleetSub">Touchez une voiture pour voir sa fiche, puis demandez votre devis sur WhatsApp.</p>
+
+    <div class="filters">
+      <div class="chips" id="chips" role="group" aria-label="Modèle"></div>
+      <div class="filters-row">
+        <label class="field"><span data-i18n="lblGear">Boîte</span><select id="fGear"></select></label>
+        <label class="field"><span data-i18n="lblFuel">Carburant</span><select id="fFuel"></select></label>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden><span data-i18n="emptyTxt">Aucune voiture ne correspond à votre recherche.</span> <button class="link" id="reset" data-i18n="reset">Réinitialiser les filtres</button></p>
+  </div>
+</section>
+
+<section class="sec alt" id="agences">
+  <div class="wrap">
+    <h2 class="eyebrow" data-i18n="agEy">Nos agences</h2>
+    <p class="title" data-i18n="agT">Deux agences, une même exigence</p>
+    <p class="sub" data-i18n="agSub">Contactez directement l'agence la plus proche de vous. La livraison est gratuite dans ces deux villes.</p>
+    <div class="agencies" id="agencies"></div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <h2 class="eyebrow" data-i18n="svcEy">Nos services</h2>
+    <p class="title" data-i18n="svcT">Un service pensé pour vous</p>
+    <p class="sub" data-i18n="svcSub">Une location simple et soignée, du premier message à la remise des clés.</p>
+    <div class="services">
+      <article><i>01</i><h3 data-i18n="sv1h">Livraison à domicile</h3><p data-i18n="sv1p">Gratuite à Oujda et à Rabat. Dans 9 autres villes du Maroc, les frais figurent sur votre devis.</p></article>
+      <article><i>02</i><h3 data-i18n="sv2h">Flotte 2026</h3><p data-i18n="sv2p">Des véhicules récents, propres et préparés avec soin avant chaque remise de clés.</p></article>
+      <article><i>03</i><h3 data-i18n="sv3h">Deux agences</h3><p data-i18n="sv3p">Une équipe à Oujda et une à Rabat, joignables directement par téléphone ou WhatsApp.</p></article>
+      <article><i>04</i><h3 data-i18n="sv4h">Formule sereine</h3><p data-i18n="sv4p">Annulation flexible, kilométrage généreux et assistance incluse.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="etapes">
+  <div class="wrap">
+    <h2 class="eyebrow" data-i18n="stEy">Comment ça marche</h2>
+    <p class="title" data-i18n="stT">De la demande aux clés</p>
+    <ol class="steps">
+      <li><i>01</i><h3 data-i18n="st1h">Choisissez une voiture</h3><p data-i18n="st1p">Comparez les modèles, la boîte et le carburant, puis gardez celle qui vous convient.</p></li>
+      <li><i>02</i><h3 data-i18n="st2h">Demandez un devis</h3><p data-i18n="st2p">Un clic ouvre WhatsApp avec votre demande prête. Indiquez vos dates : nous vous répondons avec le prix et la disponibilité.</p></li>
+      <li><i>03</i><h3 data-i18n="st3h">Prenez la route</h3><p data-i18n="st3p">Nous amenons la voiture à l'endroit convenu. Remise des clés, et c'est parti.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="destinations">
+  <div class="wrap">
+    <h2 class="eyebrow" data-i18n="dsEy">Nos destinations</h2>
+    <p class="title" data-i18n="dsT">Votre véhicule livré dans 11 villes</p>
+    <p class="sub" data-i18n="dsSub">À l'aéroport, en gare ou à domicile. La livraison est gratuite à Oujda et à Rabat ; pour les autres villes, les frais dépendent de la distance et figurent sur votre devis.</p>
+    <ul class="city-grid" id="cityGrid"></ul>
+    <details class="credits" id="cityCredits"></details>
+  </div>
+</section>
+
+<section class="sec alt" id="faq">
+  <div class="wrap narrow">
+    <h2 class="eyebrow" data-i18n="fqEy">Questions fréquentes</h2>
+    <p class="title" data-i18n="fqT">Avant de réserver</p>
+    <div class="faq">
+      <details><summary data-i18n="fq1q">Comment connaître le prix ?</summary><p data-i18n="fq1a">Touchez « Demander un devis » sur la voiture qui vous intéresse, puis choisissez votre agence : WhatsApp s'ouvre avec votre demande. Indiquez vos dates et nous vous envoyons le prix et la disponibilité.</p></details>
+      <details><summary data-i18n="fq2q">Où livrez-vous ?</summary><p data-i18n="fq2a">La livraison est gratuite à Oujda et à Rabat. Nous livrons aussi à Fès, Meknès, Nador, Tanger, Tétouan, Kénitra, Casablanca, Marrakech et Al Hoceïma : les frais figurent sur votre devis.</p></details>
+      <details><summary data-i18n="fq3q">Quelle agence contacter ?</summary><p data-i18n="fq3a">Celle de votre ville, ou la plus proche de votre lieu de livraison. Pour l'Oriental et le Rif, contactez Oujda ; pour le reste du Maroc, contactez Rabat.</p></details>
+      <details><summary data-i18n="fq4q">Qu'est-ce qui est inclus ?</summary><p data-i18n="fq4a">Annulation flexible, kilométrage généreux et assistance incluse.</p></details>
+      <details><summary data-i18n="fq5q">De quand datent les voitures ?</summary><p data-i18n="fq5a">Toute la flotte est composée de modèles 2026, préparés avant chaque location.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-in">
+    <p class="title gold-text" data-i18n="ctaT">Réservons votre prochaine route</p>
+    <p class="sub" data-i18n="ctaSub">Nous répondons le plus vite sur WhatsApp, à Oujda comme à Rabat.</p>
+    <div class="cta-btns">
+      <button class="btn btn-gold" data-quote="" data-i18n="quote">Demander un devis</button>
+      <button type="button" class="btn btn-wa" data-wa-msg="" data-i18n="waWrite">Écrire sur WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">GOMOBILITY</p>
+      <p data-i18n="ftDesc">Location de voitures à Oujda et à Rabat. Modèles 2026, livraison dans 11 villes du Maroc.</p>
+    </div>
+    <div>
+      <h4 data-i18n="ftNav">Navigation</h4>
+      <a href="#flotte" data-i18n="nav2">Nos voitures</a><a href="#agences" data-i18n="nav3">Agences</a><a href="#destinations" data-i18n="nav5">Destinations</a><a href="#faq" data-i18n="nav6">FAQ</a>
+    </div>
+    <div>
+      <h4 data-i18n="ftContact">Nos agences</h4>
+      <div id="footAgencies"></div><a data-mail href="#" dir="ltr"></a>
+    </div>
+  </div>
+  <div class="wrap foot-low"><span>© <span id="year"></span> <span data-brand>GoMobility</span>. <span data-i18n="rights">Tous droits réservés.</span></span></div>
+</footer>
+
+<button type="button" class="wa" data-wa-msg="" aria-label="Nous écrire sur WhatsApp" data-i18n-aria="aWa">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.74 2.65 4.21 3.72.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.22-.17-.47-.29Z"/></svg>
+</button>
+
+<dialog class="picker" id="picker" aria-labelledby="pickerTitle">
+  <button class="modal-x" id="pickerX" aria-label="Fermer" data-i18n-aria="aClose">×</button>
+  <p class="picker-t" id="pickerTitle"></p>
+  <p class="picker-s" id="pickerSub"></p>
+  <div class="picker-list" id="pickerList"></div>
+</dialog>
+
+<dialog class="modal" id="modal" aria-labelledby="mTitle">
+  <button class="modal-x" id="modalX" aria-label="Fermer" data-i18n-aria="aClose">×</button>
+  <div class="modal-body" id="modalBody"></div>
+</dialog>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+
+</body></html>
