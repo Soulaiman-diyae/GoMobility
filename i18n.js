@@ -7,6 +7,7 @@ const LANGS = [["fr", "FR"], ["ar", "عربي"], ["en", "EN"], ["es", "ES"]];
 
 const T = {
   fr: {
+    gExt: "Extérieur", gInt: "Intérieur", gPrev: "Photo précédente", gNext: "Photo suivante", nPhotos: "{n} photos",
     fReady: "Votre demande est prête", fReadySub: "Touchez le bouton pour l'envoyer à l'{c} sur WhatsApp.",
     pageTitle: "Location de voiture à Oujda et Rabat | {brand}",
     heroCount: "{n} voitures 2026 · agences à Oujda et Rabat",
@@ -33,6 +34,7 @@ const T = {
   },
 
   en: {
+    gExt: "Exterior", gInt: "Interior", gPrev: "Previous photo", gNext: "Next photo", nPhotos: "{n} photos",
     fReady: "Your request is ready", fReadySub: "Tap the button to send it to the {c} on WhatsApp.",
     pageTitle: "Car rental in Oujda and Rabat | {brand}",
     logoSub: "Car rental", call: "Call", nav1: "Home", nav2: "Our cars", nav3: "Agencies", nav4: "Services", nav5: "Destinations", nav6: "FAQ",
@@ -92,6 +94,7 @@ const T = {
   },
 
   es: {
+    gExt: "Exterior", gInt: "Interior", gPrev: "Foto anterior", gNext: "Foto siguiente", nPhotos: "{n} fotos",
     fReady: "Su solicitud está lista", fReadySub: "Toque el botón para enviarla a la {c} por WhatsApp.",
     pageTitle: "Alquiler de coches en Uxda y Rabat | {brand}",
     logoSub: "Alquiler de coches", call: "Llamar", nav1: "Inicio", nav2: "Nuestros coches", nav3: "Agencias", nav4: "Servicios", nav5: "Destinos", nav6: "Preguntas",
@@ -151,6 +154,7 @@ const T = {
   },
 
   ar: {
+    gExt: "الخارج", gInt: "الداخل", gPrev: "الصورة السابقة", gNext: "الصورة التالية", nPhotos: "{n} صور",
     fReady: "طلبك جاهز", fReadySub: "اضغط على الزر لإرساله إلى {c} عبر واتساب.",
     pageTitle: "كراء السيارات في وجدة والرباط | {brand}",
     logoSub: "كراء السيارات", call: "اتصل بنا", nav1: "الرئيسية", nav2: "سياراتنا", nav3: "وكالاتنا", nav4: "خدماتنا", nav5: "الوجهات", nav6: "أسئلة شائعة",
@@ -213,18 +217,21 @@ const T = {
 /* Valeurs des véhicules et villes (la clé est la valeur française utilisée dans app.js) */
 const VALUES = {
   en: {
+    SUV: "SUV", Compacte: "Hatchback", Familiale: "Family car (7 seats)", "Gris foncé": "Dark grey",
     Berline: "Saloon", Citadine: "City car", Diesel: "Diesel", Essence: "Petrol", Automatique: "Automatic", Manuelle: "Manual",
     Gris: "Grey", Bleu: "Blue", Noir: "Black", Blanc: "White",
     "Fès": "Fez", "Meknès": "Meknes", Oujda: "Oujda", Nador: "Nador", Tanger: "Tangier", "Tétouan": "Tetouan",
     Rabat: "Rabat", "Kénitra": "Kenitra", Casablanca: "Casablanca", Marrakech: "Marrakesh", "Al Hoceïma": "Al Hoceima",
   },
   es: {
+    SUV: "SUV", Compacte: "Compacto", Familiale: "Familiar (7 plazas)", "Gris foncé": "Gris oscuro",
     Berline: "Berlina", Citadine: "Urbano", Diesel: "Diésel", Essence: "Gasolina", Automatique: "Automático", Manuelle: "Manual",
     Gris: "Gris", Bleu: "Azul", Noir: "Negro", Blanc: "Blanco",
     "Fès": "Fez", "Meknès": "Mequinez", Oujda: "Uxda", Nador: "Nador", Tanger: "Tánger", "Tétouan": "Tetuán",
     Rabat: "Rabat", "Kénitra": "Kenitra", Casablanca: "Casablanca", Marrakech: "Marrakech", "Al Hoceïma": "Alhucemas",
   },
   ar: {
+    SUV: "SUV", Compacte: "مدمجة", Familiale: "عائلية (7 مقاعد)", "Gris foncé": "رمادي داكن",
     Berline: "سيدان", Citadine: "سيارة مدينة", Diesel: "ديزل", Essence: "بنزين", Automatique: "أوتوماتيك", Manuelle: "يدوي",
     Gris: "رمادي", Bleu: "أزرق", Noir: "أسود", Blanc: "أبيض",
     "Fès": "فاس", "Meknès": "مكناس", Oujda: "وجدة", Nador: "الناظور", Tanger: "طنجة", "Tétouan": "تطوان",

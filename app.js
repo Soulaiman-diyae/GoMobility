@@ -32,16 +32,41 @@ const CITIES = [
 
 /* Flotte — ajoutez, retirez ou modifiez des voitures ici.
    cat, fuel, gear, color : en français (traduits automatiquement via i18n.js).
-   photo : chemin de l'image. */
+   photo : une seule image (anciennes voitures).
+   gallery : dossier photos/cars/<id>/ avec ext = nombre de photos extérieures, int = intérieures.
+             Chaque photo existe en 3 tailles : 1.webp (grande), 1-md.webp (carte), 1-sm.webp (vignette). */
 const CARS = [
-  { id: "peugeot-208-grey",   brand: "Peugeot", model: "208",   color: "Gris",  year: 2026, cat: "Citadine", fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/peugeot-208-grey.webp" },
-  { id: "peugeot-208-blue",   brand: "Peugeot", model: "208",   color: "Bleu",  year: 2026, cat: "Citadine", fuel: "Diesel",  gear: "Manuelle",    seats: 5, photo: "photos/peugeot-208-blue.webp" },
-  { id: "peugeot-208-black",  brand: "Peugeot", model: "208",   color: "Noir",  year: 2026, cat: "Citadine", fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/peugeot-208-black.webp" },
-  { id: "renault-clio-grey",  brand: "Renault", model: "Clio",  color: "Gris",  year: 2026, cat: "Citadine", fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/renault-clio-grey.webp" },
-  { id: "renault-clio-white", brand: "Renault", model: "Clio",  color: "Blanc", year: 2026, cat: "Citadine", fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/renault-clio-white.webp" },
-  { id: "dacia-logan-grey",   brand: "Dacia",   model: "Logan", color: "Gris",  year: 2026, cat: "Berline",  fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/dacia-logan-grey.webp" },
-  { id: "dacia-logan-black",  brand: "Dacia",   model: "Logan", color: "Noir",  year: 2026, cat: "Berline",  fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/dacia-logan-black.webp" },
+  { id: "vw-touareg",        brand: "Volkswagen", model: "Touareg",   color: "Noir",       year: 2026, cat: "SUV",       fuel: "Diesel",  gear: "Automatique", seats: 5, gallery: { ext: 2, int: 6 } },
+  { id: "cupra-formentor",   brand: "Cupra",      model: "Formentor", color: "Gris",       year: 2026, cat: "SUV",       fuel: "Essence", gear: "Automatique", seats: 5, gallery: { ext: 2, int: 3 } },
+  { id: "kia-sportage",      brand: "Kia",        model: "Sportage",  color: "Blanc",      year: 2026, cat: "SUV",       fuel: "Diesel",  gear: "Automatique", seats: 5, gallery: { ext: 4, int: 3 } },
+  { id: "hyundai-tucson",    brand: "Hyundai",    model: "Tucson",    color: "Gris foncé", year: 2026, cat: "SUV",       fuel: "Diesel",  gear: "Automatique", seats: 5, gallery: { ext: 2, int: 3 } },
+  { id: "seat-ateca",        brand: "Seat",       model: "Ateca",     color: "Noir",       year: 2026, cat: "SUV",       fuel: "Diesel",  gear: "Automatique", seats: 5, gallery: { ext: 3, int: 3 } },
+  { id: "vw-golf",           brand: "Volkswagen", model: "Golf",      color: "Gris foncé", year: 2026, cat: "Compacte",  fuel: "Essence", gear: "Automatique", seats: 5, gallery: { ext: 3, int: 2 } },
+  { id: "dacia-duster",      brand: "Dacia",      model: "Duster",    color: "Gris foncé", year: 2026, cat: "SUV",       fuel: "Diesel",  gear: "Manuelle",    seats: 5, gallery: { ext: 3, int: 2 } },
+  { id: "renault-kardian",   brand: "Renault",    model: "Kardian",   color: "Gris foncé", year: 2026, cat: "SUV",       fuel: "Essence", gear: "Manuelle",    seats: 5, gallery: { ext: 1, int: 1 } },
+  { id: "dacia-jogger",      brand: "Dacia",      model: "Jogger",    color: "Gris",       year: 2026, cat: "Familiale", fuel: "Essence", gear: "Manuelle",    seats: 7, gallery: { ext: 2, int: 0 } },
+  { id: "renault-clio-grey", brand: "Renault",    model: "Clio",      color: "Gris",       year: 2026, cat: "Citadine",  fuel: "Essence", gear: "Automatique", seats: 5, gallery: { ext: 5, int: 3 } },
+  { id: "renault-clio-white",brand: "Renault",    model: "Clio",      color: "Blanc",      year: 2026, cat: "Citadine",  fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/renault-clio-white.webp" },
+  { id: "peugeot-208-grey",  brand: "Peugeot",    model: "208",       color: "Gris",       year: 2026, cat: "Citadine",  fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/peugeot-208-grey.webp" },
+  { id: "peugeot-208-blue",  brand: "Peugeot",    model: "208",       color: "Bleu",       year: 2026, cat: "Citadine",  fuel: "Diesel",  gear: "Manuelle",    seats: 5, photo: "photos/peugeot-208-blue.webp" },
+  { id: "peugeot-208-black", brand: "Peugeot",    model: "208",       color: "Noir",       year: 2026, cat: "Citadine",  fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/peugeot-208-black.webp" },
+  { id: "dacia-sandero",     brand: "Dacia",      model: "Sandero",   color: "Gris",       year: 2026, cat: "Citadine",  fuel: "Essence", gear: "Manuelle",    seats: 5, gallery: { ext: 2, int: 1 } },
+  { id: "dacia-logan-grey",  brand: "Dacia",      model: "Logan",     color: "Gris",       year: 2026, cat: "Berline",   fuel: "Essence", gear: "Automatique", seats: 5, gallery: { ext: 2, int: 0 } },
+  { id: "dacia-logan-black", brand: "Dacia",      model: "Logan",     color: "Noir",      year: 2026, cat: "Berline",   fuel: "Essence", gear: "Automatique", seats: 5, photo: "photos/dacia-logan-black.webp" },
 ];
+
+/* liste des photos d'une voiture : [{ lg, md, sm, kind }] — extérieur d'abord */
+function photosOf(c) {
+  if (!c.gallery) return [{ lg: c.photo, md: c.photo, sm: c.photo, kind: "ext" }];
+  const list = [];
+  for (const [kind, folder] of [["ext", "exterieur"], ["int", "interieur"]])
+    for (let i = 1; i <= c.gallery[kind]; i++) {
+      const base = `photos/cars/${c.id}/${folder}/${i}`;
+      list.push({ lg: base + ".webp", md: base + "-md.webp", sm: base + "-sm.webp", kind });
+    }
+  return list;
+}
+CARS.forEach(c => { c.photos = photosOf(c); c.photo = c.photos[0].md; });
 
 /* ============================================================ */
 
@@ -63,7 +88,7 @@ const orig = new WeakMap();                                       // texte fran�
 
 const name = c => `${c.brand} ${c.model}`;
 const visual = c => `<img src="${esc(c.photo)}" alt="${esc(name(c) + ", " + tv(c.color))}" loading="lazy">`;
-const badges = c => `<div class="badges"><span class="badge">${esc(tv(c.color))} · ${c.year}</span></div>`;
+const badges = c => `<div class="badges"><span class="badge">${esc(tv(c.color))} · ${c.year}</span>${c.photos.length > 1 ? `<span class="badge">${esc(t("nPhotos", { n: c.photos.length }))}</span>` : ""}</div>`;
 const carQuoteText = c => t("waCar", { car: `${name(c)} (${tv(c.color)}, ${c.year})` });
 
 const WA_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.12-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.050 0 1.21.88 2.38 1 2.54.12.16 1.74 2.65 4.21 3.72.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.22-.17-.47-.29Z"/></svg>`;
@@ -152,10 +177,11 @@ function openPicker(kind, text) {
 picker.addEventListener("click", e => { if (e.target === picker || e.target.closest(".pick") || e.target.closest("#pickerX")) picker.close(); });
 
 /* ---- filtres ---- */
-const state = { model: "", q: "" };
-const models = ["", ...new Set(CARS.map(name))];
+/* filtre par catégorie (SUV, Citadine...) : plus lisible qu'une puce par modèle */
+const state = { cat: "", q: "" };
+const cats = ["", ...uniq("cat")];
 function drawChips() {
-  $("#chips").innerHTML = models.map(m => `<button class="chip" aria-pressed="${state.model === m}" data-model="${esc(m)}">${esc(m || t("allCars"))}</button>`).join("");
+  $("#chips").innerHTML = cats.map(m => `<button class="chip" aria-pressed="${state.cat === m}" data-cat="${esc(m)}">${esc(m ? tv(m) : t("allCars"))}</button>`).join("");
 }
 function fillSelect(id, options) {                                // garde la valeur choisie lors d'un changement de langue
   const el = $("#" + id), v = el.value;
@@ -169,7 +195,7 @@ function render() {
   const words = norm(state.q).split(/\s+/).filter(Boolean);
   const list = CARS.filter(c => {
     const hay = norm([name(c), c.year, allLangs(c.cat), allLangs(c.fuel), allLangs(c.gear), allLangs(c.color)].join(" "));
-    return (!state.model || name(c) === state.model) && (!gear || c.gear === gear) && (!fuel || c.fuel === fuel) && words.every(w => hay.includes(w));
+    return (!state.cat || c.cat === state.cat) &&(!gear || c.gear === gear) && (!fuel || c.fuel === fuel) && words.every(w => hay.includes(w));
   });
   $("#grid").innerHTML = list.map(card).join("");
   $("#empty").hidden = list.length > 0;
@@ -177,7 +203,7 @@ function render() {
   observe();
 }
 function resetFilters() {
-  state.model = ""; state.q = ""; $("#q").value = "";
+  state.cat = ""; state.q = ""; $("#q").value = "";
   $("#fGear").value = $("#fFuel").value = "";
   drawChips(); render();
 }
@@ -210,7 +236,7 @@ function openCar(id) {
   const body = $("#modalBody"); body.className = "modal-body";
   const row = (k, v) => `<div><span>${esc(t(k))}</span><b>${esc(v)}</b></div>`;
   body.innerHTML = `<div class="m-info">
-      <div class="card-img">${visual(c)}${badges(c)}</div>
+      <div class="gal" id="gal"></div>
       <span class="card-brand">${esc(tv(c.cat))} · ${esc(tv(c.gear))}</span>
       <h3 id="mTitle"><bdi>${esc(name(c))}</bdi></h3>
       <div class="m-quote">${waBtn(c)}</div>
@@ -218,9 +244,52 @@ function openCar(id) {
         ${row("mYear", c.year)}${row("mColor", tv(c.color))}${row("mCat", tv(c.cat))}${row("mSeats", c.seats)}
         ${row("mFuel", tv(c.fuel))}${row("mGear", tv(c.gear))}${row("mDel", t("delVal"))}${row("mIncl", t("inclVal"))}
       </div></div>${formHTML(`${name(c)} (${tv(c.color)}, ${c.year})`)}`;
+  gal.car = c;
+  drawGallery("ext");
   syncAgency();
   modal.showModal();
 }
+
+/* ---- galerie photos de la fiche : onglets Extérieur / Intérieur, glisser au doigt, vignettes ---- */
+const gal = { car: null, list: [], i: 0 };
+function drawGallery(kind) {
+  const c = gal.car, all = c.photos;
+  const has = k => all.some(p => p.kind === k);
+  if (!has(kind)) kind = "ext";
+  gal.list = all.filter(p => p.kind === kind); gal.i = 0;
+  const alt = `${name(c)}, ${tv(c.color)}`;
+  const tabs = has("int") ? `<div class="gal-tabs" role="group">${["ext", "int"].map(k => `<button type="button" data-gtab="${k}" aria-pressed="${k === kind}">${esc(t(k === "ext" ? "gExt" : "gInt"))} <span>${all.filter(p => p.kind === k).length}</span></button>`).join("")}</div>` : "";
+  const many = gal.list.length > 1;
+  $("#gal").innerHTML = `${tabs}
+    <div class="gal-view">
+      <div class="gal-track" id="galTrack">${gal.list.map((p, i) => `<img src="${esc(p.lg)}" alt="${esc(alt)}" decoding="async" ${i ? "" : 'fetchpriority="high"'}>`).join("")}</div>
+      ${many ? `<button type="button" class="gal-arr prev" data-gstep="-1" aria-label="${esc(t("gPrev"))}">‹</button><button type="button" class="gal-arr next" data-gstep="1" aria-label="${esc(t("gNext"))}">›</button><span class="gal-count" id="galCount">1 / ${gal.list.length}</span>` : ""}
+    </div>
+    ${many ? `<div class="gal-thumbs">${gal.list.map((p, i) => `<button type="button" data-gi="${i}" aria-label="${i + 1} / ${gal.list.length}" aria-current="${i === 0}"><img src="${esc(p.sm)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}`;
+  const track = $("#galTrack");
+  track.addEventListener("scroll", () => {
+    const i = Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
+    if (i !== gal.i) { gal.i = i; markThumb(); }
+  }, { passive: true });
+}
+function markThumb() {
+  $$("#gal [data-gi]").forEach(b => b.setAttribute("aria-current", String(+b.dataset.gi === gal.i)));
+  const n = $("#galCount"); if (n) n.textContent = `${gal.i + 1} / ${gal.list.length}`;
+  $("#gal [data-gi][aria-current=true]")?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+}
+function galleryGo(i) {
+  const track = $("#galTrack"); if (!track) return;
+  gal.i = (i + gal.list.length) % gal.list.length;
+  const dir = document.documentElement.dir === "rtl" ? -1 : 1;
+  track.scrollTo({ left: dir * gal.i * track.clientWidth, behavior: "smooth" });
+  markThumb();
+}
+modal.addEventListener("keydown", e => {
+  if (!$("#galTrack") || e.target.closest("input,select,textarea")) return;
+  const rtl = document.documentElement.dir === "rtl";
+  if (e.key === "ArrowRight") galleryGo(gal.i + (rtl ? -1 : 1));
+  if (e.key === "ArrowLeft") galleryGo(gal.i + (rtl ? 1 : -1));
+});
 function openQuote() {
   const body = $("#modalBody"); body.className = "modal-body solo";
   body.innerHTML = `<h3 id="mTitle" class="sr">${esc(t("fTitle"))}</h3>` + formHTML(t("defSubject"));
@@ -287,7 +356,10 @@ document.addEventListener("click", e => {
   if (el.closest("[data-call]")) { e.preventDefault(); openPicker("tel"); return; }
   const lg = el.closest("[data-lang]"); if (lg) { applyLang(lg.dataset.lang); closeNav(); return; }
   if (el.closest("[data-quote]")) { openQuote(); return; }
-  const chip = el.closest(".chip"); if (chip) { state.model = chip.dataset.model; drawChips(); render(); return; }
+  const chip = el.closest(".chip"); if (chip) { state.cat = chip.dataset.cat; drawChips(); render(); return; }
+  const tab = el.closest("[data-gtab]"); if (tab) { drawGallery(tab.dataset.gtab); return; }
+  const th = el.closest("[data-gi]"); if (th) { galleryGo(+th.dataset.gi); return; }
+  const arr = el.closest("[data-gstep]"); if (arr) { galleryGo(gal.i + +arr.dataset.gstep); return; }
   const cd = el.closest(".card"); if (cd) { openCar(cd.dataset.id); return; }
   if (el.closest(".nav a")) closeNav();
 });
